@@ -18,6 +18,7 @@ class nodejs::repo::nodesource::apt {
     } else {
         $key_options = undef
     }
+    notify { "apt::key options: $key_options": }
     apt::source { 'nodesource':
       include  => {
         'src' => $enable_src,
